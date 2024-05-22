@@ -1,0 +1,65 @@
+1번재 영화
+Title : The 8 Show
+director : 한재림
+actor : 류준열,천우희,박정민
+description : 8인의 남녀가 8층으로 나뉜 비밀스러운 공간에 갇힌다. 그리고 ‘시간이 쌓이면 돈을 버는’ 쇼가 시작된다. 협력과 대립, 반목과 배신을 거듭하는 참가자들. 그들 사이에서 원초적 욕망이 격돌한다.
+genre : 드라마 장르
+link : https://www.netflix.com/kr/title/81719583
+img : https://occ-0-395-1361.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABWS1VPBL2QMlV3LLnla4goOZ5-xyNOr8jf4xa7gsp-XpQIK6nsoljvU4c5NIXzxjQyF31T7gZoq0rkCosP5xXvO9NHsENC0pFDhEcHzADQ6Wt6fRXjcoMA99Njckm14aPDdksX4jdBbmGpOZuDqYVshT1nzNXIKJAkS4hhRdavQvOFx7Fx_BsTgZhZS4_Q3ONLl24RtOBicBhJDmno7GIWdjEi_39RVTCy19kHryvXF3AKlm9xVzbU0GUlCXYBkstY2KliEdpfFbe4MLVX1M0QVToM7goqCpEp2Zx5mQDMLKfl1kfos6KZFsT_qLD0NX0qmqn5xBw3fKEA1rJlpKoDyKkM_YkibnE1wHaqM43nB5__oHhQ.jpg?r=514
+-------------------------------------------------------
+2번재 영화
+Title : 브리저튼
+director : 크리스 밴듀즌
+actor : 아조아 안도,줄리 앤드루스,로레인 애슈본
+description : 화려한 모습을 꿈꾸며 사교계에 데뷔하는 새로운 규수들. 그 사이, 그림자에 숨어 이중생활을 하는 한 소녀가 비밀과 반전 속에서 새롭게 빛을 찾아나간다.
+genre : 드라마 장르
+link : https://www.netflix.com/kr/title/80232398
+img : https://occ-0-395-1361.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABaWvEakzxvZv_EqRjLeomA8kSB3eiBgZto6neIE5T1W1fpxuPpuKXdsP3qL5ddapBj8FUL11WIkcBTIwAU09vrp14NtB6c7NeqEqbJHs6Gz4Z-DRR7JZSGyWhjbdhHAT4pyn6JduBrDn9k0NXBlz_xLROMheZQG0_HCxeSj4B1BKpovQDrQTsjyOIy5yhJ--PTUWoat-3Sl2iZWmIqbflAD9sKza41w29r5sDoBdDjLgKs-0U_bVU8lVn-U5U4wo1YLx8UtyyqoderS-jGQI42PBpEKN3xAteGLVddo_hzgzfa3oShy2B2KPETv_PNFb5A1VIVQ62hzMt6nwr3A1WKSPrgTLU4RWENAKrzHaoWBkMRbQckGxdQ.jpg?r=209
+-------------------------------------------------------
+3번재 영화
+Title : 살인자ㅇ난감
+director : 이창희,김다민
+actor : 최우식,손석구,이희준
+description : 우발적인 첫 살인 후 연이어 사람을 죽이게 된 평범한 청년. 자신을 끈질기게 추적하는 형사와 끝없이 쫓고 쫓기는 게임을 시작한다.
+genre : 스릴러
+link : https://www.netflix.com/kr/title/81607354
+img : https://occ-0-395-1361.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABcb7C6jpIY6MSgnAr5ez4zod0x8WDUDt1gOdkOOvqgaTHpUrt45Ffw2oGPxcJFlOSxZmlLco7DOJeYQO2KuhYyGPCrfCFFM0YorHDLZ9JHNRQeLvkLoMuK948LkpKoO1tcQk.jpg?r=b0e
+-------------------------------------------------------
+4번재 영화
+Title : 더 글로리
+director : 김은숙,안길호
+actor : 송혜교,이도현,임지연
+description : 고등학교 시절, 끔찍한 괴롭힘에 시달렸던 여자. 많은 시간이 흐른 후, 가해자들을 응징하기 위해 그녀가 치밀한 복수를 감행한다.
+genre : 드라마 장르
+link : https://www.netflix.com/kr/title/81519223
+img : https://occ-0-395-1361.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABXIY4aSLPz4K1Vlz7fpvp6FT7opPn1WH68THtQ28UoFB_-uQO0NIEIqBa3P-208lcOTT40nbBjJ9y8NUNCDwfvBfFVaf2a5Mf0Tl5QdFsYVcc25q03_WAScizHZAr03jOVk0.jpg?r=95f
+-------------------------------------------------------
+5번재 영화
+Title : 기생수: 더 그레이
+director : 연상호,류용재
+actor : 전소니,구교환,이정현
+description : 어디에선가 정체불명의 기생생물들이 나타난다. 인간을 숙주로 삼아 살인을 저지르며 세력을 구축하는 침입자들. 이를 막으려는 인간들이 기생생물과 맞서 싸운다.
+genre : SF
+link : https://www.netflix.com/kr/title/81194158
+img : https://occ-0-395-1361.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABZBHCUfvjlVAZ_a43ulD_3472yHxnni_gEh52GOPBfIJJXiBJ6kkZZryCCDGLmmxYueLM7nEtn28fs3NkcypKOyDpk07ddnv6PnNAxsIjBt0g1ERkjijG31DlOlvfOuNPMaB.jpg?r=2f8
+-------------------------------------------------------
+6번재 영화
+Title : 정신병동에도 아침이 와요
+director : 이재규,김남수,이남규,오보현,김다희
+actor : 박보영,연우진,장동윤
+description : 정신건강의학과에 새로 오게 된 간호사 정다은. 아무리 힘든 일이 생겨도 환자들에게 따뜻한 아침 햇살 같은 존재가 되기 위해 최선을 다한다.
+genre : 드라마 장르
+link : https://www.netflix.com/kr/title/81572595
+img : https://occ-0-395-1361.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABQNBE88011rB36FXFPOQo_kineKy5IZwyxQ9A7IbTZqbYwVOaMkLQgxhNRyJsUfIcyYtWfVDH79-Wn2oCrXdIiqhpqHSPA7ecQdvPApU4FYWNbGnMs9nwIfdSeOVY-BCLTeR.jpg?r=4e5
+-------------------------------------------------------
+7번재 영화
+Title : 삼체
+director : 데이비드 베니오프,D.B. 와이스,알렉산더 우
+actor : 제스 홍,리암 커닝햄,에이사 곤살레스
+description : 여러 시대에 걸쳐 온 지구를 뒤흔들 사실을 발견한 각 대륙의 저명 과학자 다섯 명. 이제 과학의 법칙들이 밝혀지고 실존적 위협이 드리우기 시작한다.
+genre : SF
+link : https://www.netflix.com/kr/title/81024821
+img : data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+-------------------------------------------------------
+8번재 영화
+Title : 던전밥

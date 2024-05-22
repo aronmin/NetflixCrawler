@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2198751-a9a7-4d80-a5ad-25e2d7b6483a" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_j_8_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/selenium_java_4_20.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NetflixMovies.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/NetflixCrawler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/util/driver/chromedriver.exe" afterDir="false" />
+    <list default="true" id="b2198751-a9a7-4d80-a5ad-25e2d7b6483a" name="변경" comment="ing">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NetflixCrawler.iml" beforeDir="false" afterPath="$PROJECT_DIR$/NetflixCrawler.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NetflixMovies.txt" beforeDir="false" afterPath="$PROJECT_DIR$/NetflixMovies.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NetflixCrawler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NetflixCrawler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,21 +24,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "aronmin"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;aronmin&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
     "url": "https://github.com/aronmin/NetflixCrawler.git",
-    "accountId": "9688d910-c79a-43a8-9e7f-794794df05bc"
+    "accountId": "e9249e06-41a9-4a47-bd39-dbaa59d804c0"
   }
 }]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2glyM4oylxQkEBhU47UNTOSsmfz" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -60,7 +55,7 @@
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Changmin Sohn/Downloads/mysql-connector-j-8.4.0/mysql-connector-j-8.4.0/mysql-connector-j-8.4.0.jar",
+    "last_opened_file_path": "G:/내 드라이브/학교/4학년/SW벤처스타트업아카데미/프로젝트/자바/NetflixCrawler",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -96,14 +91,37 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716286408241</updated>
-      <workItem from="1716286409260" duration="5927000" />
+      <workItem from="1716286409260" duration="10041000" />
+      <workItem from="1716357698201" duration="3836000" />
     </task>
+    <task id="LOCAL-00001" summary="ing">
+      <option name="closed" value="true" />
+      <created>1716323346189</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1716323346189</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="ing" />
+    <option name="LAST_COMMIT_MESSAGE" value="ing" />
   </component>
 </project>
