@@ -5,11 +5,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.NoSuchElementException;
 
 import java.util.*;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 public class NetflixCrawler {
     private final WebDriver driver;
@@ -35,33 +37,35 @@ public class NetflixCrawler {
 
     public void crawl(String startUrl) throws InterruptedException, IOException {
         driver.get(startUrl);
-        Thread.sleep(5000);
+        Thread.sleep(3000);
 
         List<WebElement> elements = driver.findElements(By.cssSelector(".nm-collections-title.nm-collections-link"));
         for (WebElement element : elements) {
-            try {
-                String url = element.getAttribute("href");
+            String url = element.getAttribute("href");
+            if (url != null && !links.contains(url)) {
+                String img_url = element.findElement(By.tagName("img")).getAttribute("src");
                 links.add(url);
-            } catch (NoSuchElementException e) {
-                break;
+                imgs.add(img_url);
             }
         }
+/**
         System.out.println(links.size());
-
+        System.out.println(imgs.size());
         List<WebElement> img_elements = driver.findElements(By.cssSelector(".nm-collections-title-img"));
         for (WebElement img_element : img_elements) {
             if(img_element.getAttribute("class").equals("nm-collections-title-img")) {
                 String img_url = img_element.getAttribute("src");
-                //System.out.println(img_url);
-                imgs.add(img_url);
+                if (!links.contains(img_url)) {
+                    imgs.add(img_url);
+                }
             }
         }
-
+*/
         try(BufferedWriter writer = new BufferedWriter(new FileWriter("NetflixMovies.txt"))) {
             try {
                 for (String link : links) {
                     driver.get(link);
-                    Thread.sleep(2000);
+                    Thread.sleep(3000);
 
                     WebElement TitleElement = driver.findElement(By.xpath("//*[@id=\"section-hero\"]/div[1]/div[1]/div[2]/div/h1"));
                     String title = TitleElement.getText();
@@ -72,22 +76,28 @@ public class NetflixCrawler {
                     writer.write("Title : " + title + "\n");
 
                     try {
-                        WebElement DirElements = driver.findElement(By.xpath("//*[@id=\"section-hero\"]/div[1]/div[1]/div[2]/div/div[2]/div[2]/div[2]/span[2]"));
-                        String director = DirElements.getText();
+                        WebElement DirElement = driver.findElement(By.xpath("//*[@id=\"section-hero\"]/div[1]/div[1]/div[2]/div/div[2]/div[2]/div[2]/span[2]"));
+                        String director = DirElement.getText();
                         directors.add(director);
                         System.out.println("director : " + director);
                         writer.write("director : " + director + "\n");
                     } catch(NoSuchElementException e) {
                         directors.add("정보없음");
-                        System.out.println("정보없음");
-                        writer.write("Director : 정보없음");
+                        System.out.println("director : 정보없음");
+                        writer.write("director : 정보없음\n");
                     }
 
-                    WebElement ActorElements = driver.findElement(By.xpath("//*[@id=\"section-hero\"]/div[1]/div[1]/div[2]/div/div[2]/div[2]/div[1]/span[2]"));
-                    String actor = ActorElements.getText();
-                    actors.add(actor);
-                    System.out.println("actor : " + actor);
-                    writer.write("actor : " + actor + "\n");
+                    try {
+                        WebElement ActorElement = driver.findElement(By.xpath("//*[@id=\"section-hero\"]/div[1]/div[1]/div[2]/div/div[2]/div[2]/div[1]/span[2]"));
+                        String actor = ActorElement.getText();
+                        actors.add(actor);
+                        System.out.println("actor : " + actor);
+                        writer.write("actor : " + actor + "\n");
+                    } catch(NoSuchElementException e) {
+                        actors.add("정보없음");
+                        System.out.println("actor : 정보없음");
+                        writer.write("actor : 정보없음\n");
+                    }
 
                     WebElement DescriptionElement = driver.findElement(By.xpath("//*[@id=\"section-hero\"]/div[1]/div[1]/div[2]/div/div[2]/div[1]"));
                     String description = DescriptionElement.getText();
