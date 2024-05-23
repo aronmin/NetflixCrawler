@@ -118,10 +118,10 @@ public class NetflixCrawler {
                         List <WebElement> ActorElements = driver.findElements(By.cssSelector(".more-details-item.item-cast"));
                         StringBuilder actorText = new StringBuilder();
                         for (int i = 0; i < ActorElements.size(); i++) {
-                            String actor = ActorElements.get(i).getText().trim(); // 배우 이름 양 옆의 공백 제거
+                            String actor = ActorElements.get(i).getText().trim();
                             actorText.append(actor);
                             if (i < ActorElements.size() - 1) {
-                                actorText.append(", "); // 마지막 배우 이후에는 쉼표 추가하지 않음
+                                actorText.append(", ");
                             }
                         }
                         if(actorText.isEmpty()) {
@@ -153,18 +153,17 @@ public class NetflixCrawler {
                     System.out.println("genre : " + genre);
                     writer.write("genre : " + genre + "\n");
 
-                    // 장르 요소 확인
+                    // 장르 카테고리
                     if (!uniqueGenres.contains(genre)) {
                         genreWriter.write("genre : " + genre + "\n");
                         uniqueGenres.add(genre);
                     }
-
                     System.out.println("link : " + links.get(cnt));
                     writer.write("link : " + links.get(cnt) + "\n");
                     System.out.println("img : " + imgs.get(cnt));
                     writer.write("img : " + imgs.get(cnt) + "\n");
 
-                    // DB삽입
+                    // DB 삽입
                     try {
                         if (!dbInsert.isDataExists(titles.get(cnt), directors.get(cnt))) {
                             dbInsert.contentInsert(titles.get(cnt), imgs.get(cnt), descriptions.get(cnt), directors.get(cnt), actors.get(cnt), links.get(cnt), "netflix");
