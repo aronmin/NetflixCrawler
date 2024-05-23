@@ -39,12 +39,27 @@ public class NetflixCrawler {
 
     public void crawl(String startUrl) throws InterruptedException, IOException {
         driver.get(startUrl);
-        Thread.sleep(3000);
+        Thread.sleep(2000);
 
         // 이미지 로드
-        WebElement button = driver.findElement(By.className("nm-content-horizontal-row-nav"));
+        //WebElement button = driver.findElement(By.className("nm-content-horizontal-row-nav"));
+        By buttonSelector = By.cssSelector(".nm-content-horizontal-row-nav.next");
+        JavascriptExecutor js = (JavascriptExecutor) driver;
 
-
+        while (true) {
+            try {
+                WebElement button = driver.findElement(buttonSelector);
+                while(!button.isDisplayed() || !isElementNearBottom(button)){
+                    js.executeScript("window.scrollBy(0,500)");
+                    Thread.sleep(1000);
+                }
+                button.click();
+                Thread.sleep(2000);
+            } catch (NoSuchElementException e) {
+                System.out.println("Button is no longer present.");
+                break;
+            }
+        }
 
         // 링크, 이미지 url
         List<WebElement> elements = driver.findElements(By.cssSelector(".nm-collections-title.nm-collections-link"));
@@ -58,7 +73,7 @@ public class NetflixCrawler {
             }
         }
         System.out.println("컨턴츠 개수 : " + links.size());
-        System.out.println("이미지 개수 : " +imgs.size());
+        System.out.println("이미지 개수 : " + imgs.size());
 
         Set<String> uniqueGenres = new HashSet<>();
 
@@ -150,6 +165,10 @@ public class NetflixCrawler {
             e.printStackTrace();
         }
     }
-
-
+    private boolean isElementNearBottom(WebElement element) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        Number elementPosition = (Number) js.executeScript("return arguments[0].getBoundingClientRect().bottom;", element);
+        Number windowHeight = (Number) js.executeScript("return window.innerHeight;");
+        return elementPosition.doubleValue() <= windowHeight.doubleValue();
+    }
 }

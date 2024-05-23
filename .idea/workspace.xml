@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b2198751-a9a7-4d80-a5ad-25e2d7b6483a" name="변경" comment="ing">
-      <change afterPath="$PROJECT_DIR$/Genres.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NetflixMovies.txt" beforeDir="false" afterPath="$PROJECT_DIR$/NetflixMovies.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/NetflixCrawler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NetflixCrawler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -97,7 +95,7 @@
       <workItem from="1716286409260" duration="10041000" />
       <workItem from="1716357698201" duration="11886000" />
       <workItem from="1716375605966" duration="16118000" />
-      <workItem from="1716438480043" duration="520000" />
+      <workItem from="1716438480043" duration="3775000" />
     </task>
     <task id="LOCAL-00001" summary="ing">
       <option name="closed" value="true" />
@@ -123,7 +121,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716383277180</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="ing">
+      <option name="closed" value="true" />
+      <created>1716439023981</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1716439023981</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
