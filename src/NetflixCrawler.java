@@ -2,16 +2,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.NoSuchElementException;
 
+import db.DBInsert;
+import java.sql.SQLException;
 import java.util.*;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -35,6 +33,7 @@ public class NetflixCrawler {
         descriptions = new ArrayList<>();
         imgs = new ArrayList<>();
     }
+    private DBInsert dbInsert = new DBInsert();
     int cnt = 0;
 
     public void crawl(String startUrl) throws InterruptedException, IOException {
@@ -42,7 +41,6 @@ public class NetflixCrawler {
         Thread.sleep(2000);
 
         // 이미지 로드
-        //WebElement button = driver.findElement(By.className("nm-content-horizontal-row-nav"));
         By buttonSelector = By.cssSelector(".nm-content-horizontal-row-nav.next");
         JavascriptExecutor js = (JavascriptExecutor) driver;
 
@@ -145,7 +143,8 @@ public class NetflixCrawler {
                     genres.add(genre);
                     System.out.println("genre : " + genre);
                     writer.write("genre : " + genre + "\n");
-                    if (!genres.contains(genre)) {
+                    // 장르 요소 확인
+                    if (!uniqueGenres.contains(genre)) {
                         genreWriter.write("genre : " + genre + "\n");
                         uniqueGenres.add(genre);
                     }
@@ -156,6 +155,32 @@ public class NetflixCrawler {
                     writer.write("img : " + imgs.get(cnt) + "\n");
                     System.out.println("-------------------------------------------------------");
                     writer.write("-------------------------------------------------------\n");
+
+                    // DB삽입
+                    try {
+                        if (!dbInsert.isDataExists(titles.get(cnt), directors.get(cnt))) {
+                            dbInsert.contentInsert(titles.get(cnt), imgs.get(cnt), descriptions.get(cnt), directors.get(cnt), actors.get(cnt), links.get(cnt), "netflix");
+                            switch(genres.get(cnt)){
+                                case "호러":
+                                    dbInsert.genreInsert(dbInsert.searchMovieID("netflix", titles.get(cnt)), 20, "netflix_genre");
+                                    break;
+                                case "드라마 장르":
+                                    dbInsert.genreInsert(dbInsert.searchMovieID("netflix", titles.get(cnt)), 2, "netflix_genre");
+                                    break;
+                                case "리얼리티 시리즈":
+                                    dbInsert.genreInsert(dbInsert.searchMovieID("netflix", titles.get(cnt)), 12, "netflix_genre");
+                                    break;
+                                default:
+                                    Integer genreId = dbInsert.searchGenreID(genres.get(cnt));
+                                    dbInsert.genreInsert(dbInsert.searchMovieID("netflix", titles.get(cnt)), genreId, "netflix_genre");
+                                    break;
+                            }
+                        } else {
+                            System.out.println("이미 데이터가 존재합니다: " + titles.get(cnt) + ", " + directors.get(cnt));
+                        }
+                    } catch (SQLException e) {
+                        System.err.println("DB 삽입 중 오류가 발생했습니다: " + e.getMessage());
+                    }
                     cnt++;
                 }
             } catch (InterruptedException e) {
@@ -165,6 +190,8 @@ public class NetflixCrawler {
             e.printStackTrace();
         }
     }
+
+    // 이미지 로딩 중 스크롤 제어
     private boolean isElementNearBottom(WebElement element) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         Number elementPosition = (Number) js.executeScript("return arguments[0].getBoundingClientRect().bottom;", element);
