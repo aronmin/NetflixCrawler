@@ -77,7 +77,7 @@ public class DBInsert extends DBBase {
 
     public boolean isDataExists(String title, String director) throws SQLException {
         boolean exists = false;
-        String sql = "SELECT COUNT(*) FROM watcha WHERE title = ? AND director = ?";
+        String sql = "SELECT COUNT(*) FROM netflix WHERE title = ? AND director = ?";
         PreparedStatement statement = super.createStatement(sql);
         statement.setString(1, title);
         statement.setString(2, director);

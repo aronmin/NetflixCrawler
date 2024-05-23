@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b2198751-a9a7-4d80-a5ad-25e2d7b6483a" name="변경" comment="ing">
-      <change afterPath="$PROJECT_DIR$/src/db/DBInsert.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/db/base/DBBase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Genres.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Genres.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NetflixMovies.txt" beforeDir="false" afterPath="$PROJECT_DIR$/NetflixMovies.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/NetflixCrawler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NetflixCrawler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/db/DBInsert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/db/DBInsert.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +36,7 @@
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
     "url": "https://github.com/aronmin/NetflixCrawler.git",
-    "accountId": "e9249e06-41a9-4a47-bd39-dbaa59d804c0"
+    "accountId": "9688d910-c79a-43a8-9e7f-794794df05bc"
   }
 }]]></component>
   <component name="ProjectColorInfo">{
@@ -57,15 +58,15 @@
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "G:/내 드라이브/학교/4학년/SW벤처스타트업아카데미/프로젝트/자바/NetflixCrawler/src",
+    "last_opened_file_path": "C:/Users/Changmin Sohn/Downloads/mysql-connector-j-8.4.0/mysql-connector-j-8.4.0/mysql-connector-j-8.4.0.jar",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "모듈",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "vcs.Git",
     "vue.rearranger.settings.migration": "true",
     "애플리케이션.Main.executor": "Run"
@@ -101,7 +102,8 @@
       <workItem from="1716286409260" duration="10041000" />
       <workItem from="1716357698201" duration="11886000" />
       <workItem from="1716375605966" duration="16118000" />
-      <workItem from="1716438480043" duration="6370000" />
+      <workItem from="1716438480043" duration="12303000" />
+      <workItem from="1716457265044" duration="6873000" />
     </task>
     <task id="LOCAL-00001" summary="ing">
       <option name="closed" value="true" />
@@ -143,7 +145,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716443098306</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="ing">
+      <option name="closed" value="true" />
+      <created>1716450047073</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1716450047073</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

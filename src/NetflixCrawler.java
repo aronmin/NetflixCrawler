@@ -49,10 +49,10 @@ public class NetflixCrawler {
                 WebElement button = driver.findElement(buttonSelector);
                 while(!button.isDisplayed() || !isElementNearBottom(button)){
                     js.executeScript("window.scrollBy(0,500)");
-                    Thread.sleep(1000);
+                    Thread.sleep(2000);
                 }
                 button.click();
-                Thread.sleep(2000);
+                Thread.sleep(3000);
             } catch (NoSuchElementException e) {
                 System.out.println("Button is no longer present.");
                 break;
@@ -61,20 +61,29 @@ public class NetflixCrawler {
 
         // 링크, 이미지 url
         List<WebElement> elements = driver.findElements(By.cssSelector(".nm-collections-title.nm-collections-link"));
+        String NoImage = "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==";
+        boolean ImgError = false;
         for (WebElement element : elements) {
             String url = element.getAttribute("href");
             if (url != null && !links.contains(url)) {
                 String img_url = element.findElement(By.tagName("img")).getAttribute("src");
                 links.add(url);
                 imgs.add(img_url);
+                if (Objects.equals(img_url, NoImage))
+                    ImgError = true;
                 System.out.println(img_url);
             }
         }
+
+        // 이미지 로드가 안된 항목이 있을 경우 프로그램 종료
         System.out.println("컨턴츠 개수 : " + links.size());
         System.out.println("이미지 개수 : " + imgs.size());
+        if (ImgError)
+            System.exit(1);
 
         Set<String> uniqueGenres = new HashSet<>();
 
+        // 각 컨텐츠 요소 탐색 및 저장
         try(BufferedWriter writer = new BufferedWriter(new FileWriter("NetflixMovies.txt"));
             BufferedWriter genreWriter = new BufferedWriter(new FileWriter("Genres.txt"))) {
             try {
@@ -143,6 +152,7 @@ public class NetflixCrawler {
                     genres.add(genre);
                     System.out.println("genre : " + genre);
                     writer.write("genre : " + genre + "\n");
+
                     // 장르 요소 확인
                     if (!uniqueGenres.contains(genre)) {
                         genreWriter.write("genre : " + genre + "\n");
@@ -153,8 +163,6 @@ public class NetflixCrawler {
                     writer.write("link : " + links.get(cnt) + "\n");
                     System.out.println("img : " + imgs.get(cnt));
                     writer.write("img : " + imgs.get(cnt) + "\n");
-                    System.out.println("-------------------------------------------------------");
-                    writer.write("-------------------------------------------------------\n");
 
                     // DB삽입
                     try {
@@ -170,6 +178,12 @@ public class NetflixCrawler {
                                 case "리얼리티 시리즈":
                                     dbInsert.genreInsert(dbInsert.searchMovieID("netflix", titles.get(cnt)), 12, "netflix_genre");
                                     break;
+                                case "애니":
+                                    dbInsert.genreInsert(dbInsert.searchMovieID("netflix", titles.get(cnt)), 9, "netflix_genre");
+                                    break;
+                                case "버라이어티 시리즈":
+                                    dbInsert.genreInsert(dbInsert.searchMovieID("netflix", titles.get(cnt)), 1, "netflix_genre");
+                                    break;
                                 default:
                                     Integer genreId = dbInsert.searchGenreID(genres.get(cnt));
                                     dbInsert.genreInsert(dbInsert.searchMovieID("netflix", titles.get(cnt)), genreId, "netflix_genre");
@@ -180,8 +194,14 @@ public class NetflixCrawler {
                         }
                     } catch (SQLException e) {
                         System.err.println("DB 삽입 중 오류가 발생했습니다: " + e.getMessage());
+                    } catch (NullPointerException e){
+                        System.err.println("장르 삽입 오류 발생 항목 : " + titles.get(cnt));
+                        System.err.println("DB 장르 삽입 중 오류가 발생했습니다: " + e.getMessage());
+                        break;
                     }
                     cnt++;
+                    System.out.println("-------------------------------------------------------");
+                    writer.write("-------------------------------------------------------\n");
                 }
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
@@ -191,7 +211,7 @@ public class NetflixCrawler {
         }
     }
 
-    // 이미지 로딩 중 스크롤 제어
+    // 이미지 로드 중 스크롤 제어
     private boolean isElementNearBottom(WebElement element) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         Number elementPosition = (Number) js.executeScript("return arguments[0].getBoundingClientRect().bottom;", element);

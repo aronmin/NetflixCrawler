@@ -1,13 +1,13 @@
-genre : 드라마 장르 *
+genre : 드라마 장르
 genre : 스릴러
 genre : SF
-genre : 호러 *
-genre : 리얼리티 시리즈 *
 genre : 액션
+genre : 호러
+genre : 리얼리티 시리즈
 genre : 어린이
 genre : 로맨스
 genre : 판타지
 genre : 코미디
-genre : 토크쇼
-genre : 다큐멘터리
 genre : 애니
+genre : 다큐멘터리
+genre : 토크쇼
